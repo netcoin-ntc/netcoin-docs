@@ -1,0 +1,52 @@
+# Rust build artifacts
+target/
+Cargo.lock
+
+# Documentation build artifacts
+site/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node data and databases
+netcoin_data/
+node_data/
+data/
+*.db
+*.ldb
+
+# Docker volumes and containers
+docker-volumes/
+docker-compose.override.yml
+
+# Mycelium specific
+mycelium/config.toml
+mycelium/*.log
+mycelium/target/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Environment files
+.env
+.env.local
+
+# Test coverage
+coverage/
+*.profraw
+
+# Backup files
+*.orig
+*.rej

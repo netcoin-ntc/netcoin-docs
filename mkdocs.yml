@@ -1,0 +1,45 @@
+site_name: NetCoin
+site_url: https://netcoin-ntc.github.io/netcoin
+repo_url: https://github.com/netcoin-ntc/netcoin
+repo_name: netcoin-ntc/netcoin
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Overview: OVERVIEW.md
+  - Features: FEATURES.md
+  - CLI Reference: CLI.md
+  - Architecture: ARCHITECTURE.md
+  - Roadmap: ROADMAP.md
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/netcoin-ntc/netcoin
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
