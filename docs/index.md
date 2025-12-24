@@ -16,7 +16,7 @@ NetCoin implements Jason Lowery's Softwar vision by making computational energy 
 
 ### Run a Node
 ```bash
-git clone https://github.com/netcoin/netcoin.git
+git clone https://github.com/netcoin-ntc/netcoin.git
 cd netcoin
 make deploy
 ```
@@ -37,7 +37,7 @@ NetCoin operates on a separate IPv6 subnet (0x500::/7) from standard Mycelium, e
 
 ## Community & Development
 
-- **GitHub**: [netcoin/netcoin](https://github.com/netcoin/netcoin)
+- **GitHub**: [netcoin-ntc/netcoin](https://github.com/netcoin-ntc/netcoin)
 - **Documentation**: Explore the full docs in the navigation
 - **Contributing**: Open-source Rust implementation, Docker deployment
 
