@@ -4,8 +4,6 @@ repo_url: https://github.com/netcoin-ntc/netcoin
 repo_name: netcoin-ntc/netcoin
 edit_uri: edit/main/docs/
 
-docs_dir: '.'
-
 nav:
   - Home: index.md
   - Overview: OVERVIEW.md
