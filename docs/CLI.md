@@ -7,7 +7,7 @@ Netcoin provides a comprehensive command-line interface for wallet management, a
 After building Netcoin:
 
 ```bash
-cd netcoin
+cd netcoin-core
 ./target/release/netcoin-node --help
 ```
 

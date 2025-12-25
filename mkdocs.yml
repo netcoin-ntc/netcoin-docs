@@ -1,7 +1,7 @@
 site_name: Netcoin
-site_url: https://netcoin-ntc.github.io/netcoin
-repo_url: https://github.com/netcoin-ntc/netcoin
-repo_name: netcoin-ntc/netcoin
+site_url: https://netcoin-ntc.github.io/netcoin-docs
+repo_url: https://github.com/netcoin-ntc/netcoin-core
+repo_name: netcoin-ntc/netcoin-core
 edit_uri: edit/main/docs/
 
 nav:
@@ -34,7 +34,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/netcoin-ntc/netcoin
+      link: https://github.com/netcoin-ntc/netcoin-core
 
 markdown_extensions:
   - pymdownx.highlight
