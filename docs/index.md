@@ -88,14 +88,20 @@ cd netcoin-core && cargo build --release
 
 #### **Mobile Participation Options:**
 
-##### **Option A: Light Client (Recommended)**
+##### **The Reality: Mobile Phones Cannot Run Mycelium Routing Daemons**
+
+**Technical Limitation**: Mobile operating systems (iOS/Android) do not allow TUN interfaces required for packet routing. This is a fundamental OS security restriction.
+
+**However: Mobile Users Can Still Contribute Meaningfully!**
+
+##### **Option A: Light Client with Economic Participation (Recommended)**
 ```bash
 # iOS/Android App:
 # - Download NetCoin mobile app
 # - Create wallet with seed phrase
 # - Connect to NetCoin network
-# - Access basic services
-# - Earn ecosystem rewards
+# - Use & provide services on Mycelium
+# - Earn ecosystem rewards & discounts
 ```
 
 **Capabilities:**
@@ -103,12 +109,30 @@ cd netcoin-core && cargo build --release
 - ✅ **@username aliases** (register and use)
 - ✅ **Basic transactions** (privacy-preserving)
 - ✅ **Service access** (websites, APIs on Mycelium)
-- ✅ **Ecosystem rewards** (governance tokens, service discounts)
+- ✅ **Service hosting** (run websites/APIs using the network)
+- ✅ **Governance participation** (vote on network decisions)
+
+**How Mobile Users Contribute to Mycelium Ecosystem:**
+- ✅ **Pay for premium services** → Funds network infrastructure & full node operators
+- ✅ **Provide services** → Increases network utility (websites, APIs attract more users)
+- ✅ **Create demand** → More users → More full nodes → Better network coverage
+- ✅ **Economic incentives** → Premium payments subsidize routing infrastructure
+- ✅ **Validation support** → Light client verification helps secure the network
+
+**Example Economic Flow:**
+```
+Mobile User → Pays 10 NTC for premium service
+          → Funds Full Node Operator
+          → Full Node Operator routes more packets
+          → Better network performance
+          → More users attracted
+          → Network grows sustainably
+```
 
 **Limitations:**
-- ❌ **No full routing** (mobile devices can't run TUN interfaces reliably)
-- ❌ **No PoNW mining** (insufficient resources for routing daemon)
-- ❌ **No premium services** hosting
+- ❌ **Cannot run TUN interface** (iOS/Android OS restrictions)
+- ❌ **Cannot forward packets** (battery/network/mobile constraints)
+- ❌ **No direct PoNW mining** (insufficient resources for routing daemon)
 
 ##### **Option B: Remote Mining (Future)**
 - **Delegate routing** to trusted full nodes
