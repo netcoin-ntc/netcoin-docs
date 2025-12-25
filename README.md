@@ -1,6 +1,6 @@
-# NetCoin Documentation
+# Netcoin Documentation
 
-Official documentation for the NetCoin blockchain project, built with MkDocs and Material theme.
+Official documentation for the Netcoin blockchain project, built with MkDocs and Material theme.
 
 ## 📚 Live Documentation
 
@@ -104,7 +104,7 @@ mkdocs.yml           # MkDocs configuration
 
 ### Versioning
 
-Documentation follows semantic versioning aligned with NetCoin releases:
+Documentation follows semantic versioning aligned with Netcoin releases:
 - **Major**: Breaking changes or redesigns
 - **Minor**: New features or significant updates
 - **Patch**: Corrections and small improvements
@@ -130,12 +130,12 @@ Documentation follows semantic versioning aligned with NetCoin releases:
 
 - **Issues**: Report bugs in this repository
 - **Discussions**: General questions in [community repo](../community)
-- **Technical**: Post in NetCoin development channels
+- **Technical**: Post in Netcoin development channels
 
 ## 📄 License
 
-This documentation is part of the NetCoin project and follows the same license terms.
+This documentation is part of the Netcoin project and follows the same license terms.
 
 ---
 
-*Contributing to documentation helps make NetCoin more accessible to everyone!* 📚✨
+*Contributing to documentation helps make Netcoin more accessible to everyone!* 📚✨

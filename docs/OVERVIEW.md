@@ -1,8 +1,8 @@
-# NetCoin: Decentralized Network with Energy-Verified Routing
+# Netcoin: Decentralized Network with Energy-Verified Routing
 
 ## Executive Summary
 
-NetCoin is a blockchain that integrates Mycelium's decentralized IPv6 overlay network with a novel Proof of Network (PoN) consensus mechanism. Taking inspiration from Bitcoin's great design, NetCoin makes computational energy productive by embedding brute-force puzzles directly into network routing tasks. This creates a fair, energy-backed economy where tokens represent verified physical work, aligning with Jason Lowery's Softwar thesis of energy as strategic power.
+Netcoin is a blockchain that integrates Mycelium's decentralized IPv6 overlay network with a novel Proof of Network (PoN) consensus mechanism. Taking inspiration from Bitcoin's great design, Netcoin makes computational energy productive by embedding brute-force puzzles directly into network routing tasks. This creates a fair, energy-backed economy where tokens represent verified physical work, aligning with Jason Lowery's Softwar thesis of energy as strategic power.
 
 The system focuses exclusively on network infrastructure: participants earn NTC by contributing to global routing, with energy expenditure proven through puzzle-solving success. This establishes a self-sustaining decentralized network where security and utility scale with adoption.
 
@@ -17,9 +17,9 @@ The system focuses exclusively on network infrastructure: participants earn NTC 
 
 ## Concept Explanation: Routing as Energy Proof
 
-### Traditional PoW vs. NetCoin PoN
+### Traditional PoW vs. Netcoin PoN
 - **Bitcoin PoW**: Hash computations provide security but serve no additional utility
-- **NetCoin PoN**: Routing puzzles optimize network paths, forward packets, and maintain connectivity—computation serves dual purpose: security + utility
+- **Netcoin PoN**: Routing puzzles optimize network paths, forward packets, and maintain connectivity—computation serves dual purpose: security + utility
 
 ### How Energy Verification Works
 1. **Routing Tasks**: Nodes handle packet forwarding using Mycelium's Babel protocol
@@ -39,7 +39,7 @@ This mirrors Bitcoin's hash rate estimation but ties it to useful work: routing 
 
 ### Core Components
 - **Mycelium Network**: Decentralized IPv6 overlay for secure, planetary-scale communication
-- **NetCoin Blockchain**: PoN consensus validating routing contributions
+- **Netcoin Blockchain**: PoN consensus validating routing contributions
 - **Client Software**: Unified app for routing participation, wallet, and network access
 
 ### Participation Levels
@@ -154,10 +154,10 @@ NTC Spending → Network Services → Sustained Decentralized Infrastructure
 
 ## Conclusion
 
-NetCoin realizes Lowery's vision: a network secured by cumulative energy where participation strengthens collective defense. By making PoW useful through routing puzzles, it creates a sustainable decentralized internet layer—fair, secure, and powered by physics.
+Netcoin realizes Lowery's vision: a network secured by cumulative energy where participation strengthens collective defense. By making PoW useful through routing puzzles, it creates a sustainable decentralized internet layer—fair, secure, and powered by physics.
 
 NTC isn't just currency; it's proof of contribution to a global public good. This rethinks digital infrastructure as an energy meritocracy.
 
 **Next Step**: Begin PoN implementation with Mycelium integration.
 
-The future of the internet is decentralized, and NetCoin can be its foundation.
+The future of the internet is decentralized, and Netcoin can be its foundation.

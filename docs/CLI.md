@@ -1,10 +1,10 @@
-# NetCoin CLI Reference
+# Netcoin CLI Reference
 
-NetCoin provides a comprehensive command-line interface for wallet management, alias operations, and node control.
+Netcoin provides a comprehensive command-line interface for wallet management, alias operations, and node control.
 
 ## Getting Started
 
-After building NetCoin:
+After building Netcoin:
 
 ```bash
 cd netcoin
@@ -16,7 +16,7 @@ cd netcoin
 ### Node Commands
 
 #### `netcoin-node node`
-Start the NetCoin node for mining and network participation.
+Start the Netcoin node for mining and network participation.
 
 ```bash
 netcoin-node node
@@ -37,7 +37,7 @@ netcoin-node info
 
 Output:
 ```
-NetCoin (NTC) - PoNW Blockchain
+Netcoin (NTC) - PoNW Blockchain
 Version: 0.1.0
 Consensus: Proof of Network
 Network: 0x500::/7 subnet

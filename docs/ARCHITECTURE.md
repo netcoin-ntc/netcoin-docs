@@ -1,12 +1,12 @@
-# NetCoin Architecture
+# Netcoin Architecture
 
 ## High-Level Overview
 
-NetCoin is a decentralized network combining blockchain consensus with overlay networking. It uses PoNW (Proof of Network) to create an energy-backed economy where routing work generates tokens.
+Netcoin is a decentralized network combining blockchain consensus with overlay networking. It uses PoNW (Proof of Network) to create an energy-backed economy where routing work generates tokens.
 
 ```
 ┌─────────────────┐    ┌─────────────────┐
-│   NetCoin Node  │    │   Mycelium      │
+│   Netcoin Node  │    │   Mycelium      │
 │                 │    │   Routing       │
 │ ┌─────────────┐ │    │                 │
 │ │  PoN        │◄┼───►│ Babel Protocol │
@@ -62,7 +62,7 @@ NetCoin is a decentralized network combining blockchain consensus with overlay n
 
 ## Deployment
 
-- **Docker Compose**: Orchestrates Mycelium + NetCoin
+- **Docker Compose**: Orchestrates Mycelium + Netcoin
 - **Cross-Platform**: Runs on any OS with Docker
 - **Scalability**: Light clients enable mobile participation
 

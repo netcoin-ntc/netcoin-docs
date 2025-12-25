@@ -1,7 +1,7 @@
-# NetCoin Comprehensive Roadmap
+# Netcoin Comprehensive Roadmap
 
 ## Executive Summary
-This roadmap outlines the development of NetCoin from its current PoNW prototype to a full production blockchain network. The focus is on completing core blockchain functionality while maintaining the innovative energy-verified routing consensus.
+This roadmap outlines the development of Netcoin from its current PoNW prototype to a full production blockchain network. The focus is on completing core blockchain functionality while maintaining the innovative energy-verified routing consensus.
 
 **Current Status**: PoNW foundation implemented with single-node operation
 **Goal**: Production-ready multi-node network with wallet, transactions, and premium services
@@ -222,7 +222,7 @@ This roadmap outlines the development of NetCoin from its current PoNW prototype
 
 ## Conclusion
 
-NetCoin's PoNW represents a paradigm shift in blockchain design—energy-backed networking that benefits all participants. This roadmap provides a clear path from prototype to production, with measurable milestones and risk mitigation strategies.
+Netcoin's PoNW represents a paradigm shift in blockchain design—energy-backed networking that benefits all participants. This roadmap provides a clear path from prototype to production, with measurable milestones and risk mitigation strategies.
 
 The network's unique value proposition—decentralized infrastructure funded by useful computation—positions it for significant adoption in the post-Web2 world.
 

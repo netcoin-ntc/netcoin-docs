@@ -1,4 +1,4 @@
-# NetCoin Features
+# Netcoin Features
 
 ## Core Features
 
