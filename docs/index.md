@@ -343,20 +343,6 @@ cd netcoin-core && make build
 - **Community Building**: Organize local meetups
 - **Translation**: Multi-language support
 
-## Future Roadmap & Vision
-
-### 🚀 **Immediate Future (Q1 2025):**
-- Complete Mycelium daemon integration
-- PoNW security implementation
-- Mobile application launch
-- Premium service marketplace
-
-### 🔮 **Long-term Vision (2025+):**
-- Global decentralized internet infrastructure
-- AI-optimized routing algorithms
-- Cross-chain interoperability
-- Planetary-scale network coverage
-
 ---
 
 **NetCoin: Where running a node means building the future internet infrastructure - and getting paid to do it.**

@@ -10,7 +10,6 @@ nav:
   - Features: FEATURES.md
   - CLI Reference: CLI.md
   - Architecture: ARCHITECTURE.md
-  - Roadmap: ROADMAP.md
 
 theme:
   name: material
