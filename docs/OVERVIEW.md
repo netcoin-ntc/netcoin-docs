@@ -93,8 +93,8 @@ This provides Bitcoin's security guarantees while ensuring mining remains access
 
 ### Generation
 - **Mining Rewards**: CPU mining with RandomX algorithm
-- **Fair Emission**: 100M NTC base + 0.5 NTC/block perpetual tail emission
-- **No Halting**: Mining continues forever with decreasing but sustainable rewards
+- **Unlimited Supply**: Continuous emission with decreasing inflation
+- **Perpetual Mining**: Always possible to earn NTC through energy expenditure
 
 ### Consumption
 - **Private Transactions**: Ring signatures + confidential amounts

@@ -37,10 +37,10 @@
 ## 💰 Economic Features
 
 ### Fair Tokenomics
-- **100M NTC Supply**: Higher than Bitcoin for broader distribution
-- **Tail Emission**: 0.5 NTC/block forever prevents mining centralization
-- **No First-Mover Advantage**: Equal opportunity regardless of participation timing
-- **Perpetual Mining**: Sustainable rewards for long-term network security
+- **Unlimited Supply**: Perfect fairness with no participation timing advantages
+- **Controlled Inflation**: Decreasing emission rate prevents hyperinflation
+- **Equal Opportunity**: Same energy input = same rewards regardless of when you start
+- **Perpetual Mining**: Always possible to earn NTC through CPU mining
 
 ### Energy-Backed Value
 - **Computational Proof**: Every NTC represents verified energy expenditure

@@ -22,10 +22,10 @@ Netcoin is a next-generation privacy cryptocurrency that implements pure proof-o
 - **Global Participation**: Anyone with a computer can mine
 
 #### 💰 **Sustainable Economics**
-- **100M NTC Supply**: Higher than Bitcoin for broader distribution
-- **Tail Emission**: 0.5 NTC/block forever prevents mining end
+- **Unlimited Supply**: Perfect fairness with no participation timing advantages
+- **Controlled Inflation**: Decreasing emission prevents hyperinflation
 - **Large Blocks**: 8MB+ capacity enables practical transactions
-- **No First-Mover Advantage**: Perpetual fairness
+- **True Meritocracy**: Equal opportunity for all energy contributors
 
 ## Why Netcoin vs Bitcoin/Monero
 
@@ -173,7 +173,7 @@ Netcoin operates as a unified privacy blockchain:
 - **Block Time**: 10 minutes
 - **Block Size**: 8MB starting, +2MB every 4 years
 - **Privacy**: ElGamal + MLSAG + Bulletproofs
-- **Supply**: 100M NTC + 0.5 NTC/block tail emission
+- **Supply**: Unlimited with controlled decreasing inflation
 - **Mining**: CPU-only, ASIC-resistant
 - **Performance**: 2000+ TPS with full privacy
 
