@@ -1,163 +1,292 @@
-# Netcoin: Decentralized Network with Energy-Verified Routing
+# Netcoin: Energy-Meritocratic Privacy Cryptocurrency
 
 ## Executive Summary
 
-Netcoin is a blockchain that integrates Mycelium's decentralized IPv6 overlay network with a novel Proof of Network (PoN) consensus mechanism. Taking inspiration from Bitcoin's great design, Netcoin makes computational energy productive by embedding brute-force puzzles directly into network routing tasks. This creates a fair, energy-backed economy where tokens represent verified physical work, aligning with Jason Lowery's Softwar thesis of energy as strategic power.
+Netcoin is a next-generation privacy cryptocurrency that implements pure proof-of-work consensus using the RandomX algorithm, combined with advanced ElGamal-enhanced cryptography. Building on Bitcoin's security model while exceeding Monero's privacy capabilities, Netcoin creates true energy meritocracy where computational work directly translates to value creation, regardless of participation timing.
 
-The system focuses exclusively on network infrastructure: participants earn NTC by contributing to global routing, with energy expenditure proven through puzzle-solving success. This establishes a self-sustaining decentralized network where security and utility scale with adoption.
+The system delivers military-grade privacy through multiple cryptographic layers while ensuring fair economics that prevent first-mover advantages. Every NTC represents verified computational energy, creating a sustainable digital currency that aligns with Jason Lowery's Softwar thesis of energy as strategic power in the information age.
 
-## Core Philosophy: Energy Meritocracy in Networking
+## Core Philosophy: Energy Meritocracy in Digital Value
 
 **No Inequality. Just Physics in Action.**
 
-- **Energy In = Network Out**: Expend physical energy on routing computations → earn NTC → access premium network services
-- **Merit-Based Networking**: All rewards based on current routing contributions; no historical advantages
-- **Equal Access**: Any device can participate by performing routing work
-- **Verified Exchange**: NTC proves computational energy spent on useful network tasks
+- **Energy In = Value Out**: Expend computational energy on mining → earn NTC → transact with perfect privacy
+- **Merit-Based Economics**: All rewards based on current energy contributions; no historical advantages
+- **Equal Access**: Any device can participate through CPU mining
+- **Verified Creation**: NTC proves computational energy spent on network security
 
-## Concept Explanation: Routing as Energy Proof
+## Concept Explanation: CPU Mining as Energy Proof
 
-### Traditional PoW vs. Netcoin PoN
-- **Bitcoin PoW**: Hash computations provide security but serve no additional utility
-- **Netcoin PoN**: Routing puzzles optimize network paths, forward packets, and maintain connectivity—computation serves dual purpose: security + utility
+### Traditional PoW vs. Netcoin's Approach
+- **Bitcoin PoW**: SHA256 mining creates security but wastes energy on useless computation
+- **Monero PoW**: RandomX mining provides privacy but limited to that single benefit
+- **Netcoin PoW**: RandomX mining + ElGamal privacy creates comprehensive value proposition
 
 ### How Energy Verification Works
-1. **Routing Tasks**: Nodes handle packet forwarding using Mycelium's Babel protocol
-2. **Embedded Puzzles**: Each routing decision includes brute-force nonce-finding (e.g., find a number that, when hashed with routing data, meets a target)
-3. **Energy Proof**: Success probability scales with compute power (energy); more energy = faster solving = more routing contributions
-4. **Difficulty Adjustment**: Protocol adjusts puzzle hardness based on network participation, maintaining ~10-minute block times like Bitcoin
-5. **Inferred Energy**: Total network energy is estimated from block rates and puzzle success, ensuring proportionality without sensors
+1. **Mining Tasks**: Nodes compete using RandomX algorithm on standard hardware
+2. **CPU Optimization**: Memory-hard computation prevents ASIC monopolies
+3. **Energy Proof**: Mining success scales with computational power (energy expenditure)
+4. **Difficulty Adjustment**: Protocol maintains 10-minute block times like Bitcoin
+5. **Direct Energy**: CPU mining provides measurable, real-world energy consumption
 
-This mirrors Bitcoin's hash rate estimation but ties it to useful work: routing computations inherently consume energy, and puzzle success proves you've done the physics.
+This provides Bitcoin's security guarantees while ensuring mining remains accessible to anyone with a computer, creating true energy meritocracy.
 
-### Why It Beats Sensors
-- Sensors can be hacked (bypassed, spoofed), undermining verification
-- PoN embeds proof in the work itself—can't fake routing contributions without actual energy
-- Hardware-agnostic: works on any OS/device, from phones to servers
+### Why CPU Mining Beats ASIC Dominance
+- ASICs can be captured by nation-states or corporations
+- CPU mining distributes power across global population
+- Prevents mining centralization (Bitcoin's current vulnerability)
+- Maintains meritocracy: energy input = mining output
 
 ## System Architecture
 
 ### Core Components
-- **Mycelium Network**: Decentralized IPv6 overlay for secure, planetary-scale communication
-- **Netcoin Blockchain**: PoN consensus validating routing contributions
-- **Client Software**: Unified app for routing participation, wallet, and network access
+- **RandomX Mining Engine**: CPU-optimized proof-of-work using Monero's algorithm
+- **ElGamal Privacy Layer**: Advanced cryptographic privacy exceeding current standards
+- **UTxO Blockchain**: Bitcoin-compatible with confidential transactions
+- **P2P Network**: Custom protocol with privacy-preserving peer discovery
 
 ### Participation Levels
-- **Full Nodes**: Dedicated hardware providing 24/7 routing + block validation; earns NTC
-- **Light Nodes**: Phones/tablets contributing opportunistically (battery-efficient mode); earns NTC
-- **Consumers**: Users accessing basic services for free; premium features require NTC
+- **Mining Nodes**: CPU mining for block rewards and network security
+- **Full Nodes**: Complete blockchain validation with mining capability
+- **Light Clients**: SPV verification for mobile wallets and exchanges
+- **Users**: Privacy-preserving transactions with optional mining
 
 ### Integration
-- Routing software embeds PoW puzzles into Babel protocol calculations
-- Solved puzzles validate blocks and earn rewards proportional to energy spent
-- Network difficulty auto-adjusts to balance security and participation
+- Mining software uses RandomX for ASIC-resistant CPU mining
+- Privacy features provide true anonymity (not just pseudonymity)
+- Network scales through large blocks and efficient validation
+- Economics prevent first-mover advantages
 
 ## Technical Implementation
 
-### Consensus: PoN with Routing Puzzles
-- **Block Creation**: Nodes compete by solving routing-based puzzles; winner broadcasts block with verified routing contributions
-- **Validation**: Other nodes check puzzle solutions and routing work validity
-- **Rewards**: NTC distributed based on puzzle success rate + routing volume
-- **Fork Resolution**: Longest valid chain with most energy-backed routing work
+### Consensus: RandomX Proof of Work
+- **Block Creation**: Miners compete using RandomX CPU algorithm
+- **Validation**: Nodes verify mining proof and transaction validity
+- **Rewards**: NTC distributed based on mining contribution (energy expenditure)
+- **Fork Resolution**: Longest valid chain with most accumulated work
 
-### Energy Verification Details
-- **Puzzle Design**: Nonce-finding tied to real routing data (e.g., hash of packet headers + path options)
-- **Success Metric**: Number of valid puzzles solved per time unit, adjusted for hardware (but energy-proportional)
-- **Uniformity**: All NTC represent equivalent energy, enforced by protocol rules
-- **No External Measurement**: Purely computational proof, like Bitcoin
+### Privacy Implementation Details
+- **Ring Signatures**: MLSAG with 16-member rings for transaction anonymity
+- **Confidential Amounts**: Pedersen commitments + Bulletproofs range proofs
+- **Stealth Addresses**: One-time addresses with ElGamal key derivation
+- **Metadata Encryption**: ElGamal protection for transaction memos
 
 ### Blockchain Features
-- **Privacy**: Ring signatures for anonymous transactions
+- **Privacy**: True cryptographic anonymity (not traceable like Bitcoin)
 - **Aliases**: @username system for human-readable addresses
-- **Fees**: Energy-based, tied to routing complexity
-- **Governance**: Voting weighted by routing contributions
+- **Fees**: Energy-based calculation with miner incentives
+- **Governance**: Stake-weighted voting with privacy preservation
 
-### Network Features
-- **Scalability**: Mycelium's proven global routing with automatic rerouting
-- **Light Participation**: No-TUN mode for mobile devices to minimize battery drain
-- **Services**: Premium routing, VPN, secure channels paid in NTC
+### Mining Features
+- **CPU Optimization**: RandomX prevents ASIC mining centralization
+- **Fair Distribution**: Equal opportunity regardless of participation timing
+- **Energy Meritocracy**: Mining rewards proportional to computational energy
+- **Accessibility**: Any computer can mine effectively
 
-## Economic Model: Energy-Backed Network Economy
+## Economic Model: Fair Energy-Backed Currency
 
 ### NTC Properties
-- **Physical Backing**: Each coin represents verified computational energy (inferred watt-hours)
-- **Scarcity**: Limited by actual routing work performed
-- **Utility**: Powers network services and access
-- **Value**: Determined by energy costs and network demand
+- **Energy Backing**: Each coin represents verified computational work
+- **Fair Distribution**: No first-mover advantages or artificial scarcity
+- **Privacy Utility**: Enables anonymous, censorship-resistant transactions
+- **Value**: Determined by network adoption and energy costs
 
 ### Generation
-- **Routing Rewards**: Earned for successful puzzle solutions + routing contributions
-- **Inflation**: Controlled by participation levels, like Bitcoin's halving
+- **Mining Rewards**: CPU mining with RandomX algorithm
+- **Fair Emission**: 100M NTC base + 0.5 NTC/block perpetual tail emission
+- **No Halting**: Mining continues forever with decreasing but sustainable rewards
 
 ### Consumption
-- **Premium Services**:
-  - **QoS Routing**: Guaranteed low-latency paths with priority queuing
-  - **VPN Tunnels**: End-to-end encrypted virtual private networks
-  - **Bandwidth Boost**: Higher throughput for data transfers
-  - **Secure Channels**: Tamper-proof communication with integrity checks
-  - **Custom Routing**: User-defined path preferences and filters
-- **Transaction Fees**: Blockchain operations scaled by routing work
+- **Private Transactions**: Ring signatures + confidential amounts
+- **Premium Features**: Advanced privacy options and analytics resistance
+- **Exchange Services**: OTC trading with enhanced privacy
+- **Merchant Adoption**: Low-fee, instant payments for businesses
 
 ### Flow
 ```
-Physical Energy (Computation) → Routing Work + Puzzles → NTC Earnings
-NTC Spending → Network Services → Sustained Decentralized Infrastructure
+Computational Energy (CPU Mining) → RandomX Mining → NTC Earnings
+NTC Spending → Private Transactions → Privacy Utility → Network Value
+```
+
+## Getting Started Guide
+
+### Quick Start for Users
+
+#### 1. Download Wallet
+```bash
+# Download from official website
+curl -L https://netcoin.org/download | bash
+
+# Or build from source
+git clone https://github.com/netcoin-ntc/netcoin-core
+cd netcoin-core && cargo build --release
+```
+
+#### 2. Create Wallet
+```bash
+# Initialize new wallet
+./netcoin-wallet create
+
+# Backup seed phrase (keep secure!)
+./netcoin-wallet seed
+
+# Create alias for easy receiving
+./netcoin-wallet alias register myname 10
+```
+
+#### 3. Start Mining (Optional)
+```bash
+# Start CPU mining
+./netcoin-miner start
+
+# Check mining status
+./netcoin-miner status
+
+# View earnings
+./netcoin-wallet balance
+```
+
+#### 4. Send Private Transaction
+```bash
+# Send with full privacy
+./netcoin-wallet send @recipient 100 \
+  --privacy full \
+  --ring-size 16 \
+  --memo "Private payment"
+
+# Transaction is completely anonymous
+```
+
+### For Developers
+
+#### Run Full Node
+```bash
+# Download and verify
+wget https://netcoin.org/releases/netcoin-v1.0.0.tar.gz
+tar xzf netcoin-v1.0.0.tar.gz
+cd netcoin-v1.0.0
+
+# Configure and run
+./netcoind --config config.toml
+```
+
+#### API Integration
+```rust
+use netcoin_rpc::{Client, Transaction};
+
+let client = Client::new("http://localhost:8332")?;
+
+let tx = Transaction::new()
+    .add_recipient("@alice", 100)
+    .set_privacy(PrivacyLevel::Full)
+    .set_ring_size(16);
+
+client.send_transaction(tx)?;
+```
+
+### For Exchanges
+
+#### Integration Requirements
+- SPV light client for fast sync
+- Privacy-preserving transaction monitoring
+- Support for stealth addresses
+- @alias resolution for user-friendly deposits
+
+#### Setup Example
+```bash
+# Run light client
+./netcoin-light --rpc-port 8332 --data-dir /var/lib/netcoin
+
+# Monitor deposits
+curl http://localhost:8332/api/v1/address/@exchange_alias/transactions
 ```
 
 ## Implementation Roadmap
 
-### Phase 1: Core Development (Months 1-3)
-- Implement basic PoN consensus in Rust
-- Design routing puzzle integration with Mycelium
-- Build multi-OS client with wallet and alias system
+### Phase 1: Core Cryptography (Q1 2025)
+- ElGamal encryption primitives implementation
+- Pedersen commitments and Bulletproofs integration
+- MLSAG ring signature system
+- Stealth address generation
 
-### Phase 2: Network Integration (Months 4-6)
-- Embed puzzles into Babel routing protocol
-- Develop light client for mobile participation
-- Test energy verification algorithms
+### Phase 2: Consensus & Mining (Q2 2025)
+- RandomX algorithm port to Rust
+- Blockchain core with UTxO model
+- CPU mining optimization
+- Difficulty adjustment algorithm
 
-### Phase 3: Testing & Optimization (Months 7-9)
-- Simulate network with 10-20 nodes
-- Benchmark puzzle performance and energy proportionality
-- Security audits on consensus
+### Phase 3: Network & Wallets (Q3 2025)
+- P2P network with privacy features
+- Wallet with stealth addresses and aliases
+- Light client implementation
+- Mobile wallet development
 
-### Phase 4: Launch & Scaling (Months 10-12)
-- Public testnet with incentivized routing
-- Mobile app release
+### Phase 4: Testing & Launch (Q4 2025)
+- Comprehensive security audits
+- Testnet with 1000+ nodes
+- Performance benchmarking
+- Privacy feature validation
+
+### Phase 5: Mainnet & Scaling (Q1-Q2 2026)
+- Mainnet genesis block
 - Global node distribution
+- Ecosystem development
+- Exchange integrations
 
 ## Security Analysis
 
 ### Attack Resistance
-- **51% Attacks**: Require majority computational energy, prohibitive at scale
-- **Sybil**: New identities must prove energy through routing work
-- **DDoS**: Distributed network with automatic mitigation
-- **Spam**: Energy costs deter abuse
+- **51% Attacks**: RandomX CPU mining distributes power globally, preventing capture
+- **Chain Analysis**: ElGamal + MLSAG + stealth addresses provide complete privacy
+- **Mining Centralization**: ASIC-resistance ensures fair participation
+- **Sybil Attacks**: Energy-based mining barriers prevent spam identities
 
-### Lowery Alignment
-- Energy barriers grow with adoption
-- No sensors = no hacking vulnerabilities
-- Useful work prevents waste
+### Privacy Superiority
+- **True Anonymity**: Cryptographic privacy (not traceable like Bitcoin)
+- **Metadata Protection**: ElGamal encryption of transaction details
+- **Forward Secrecy**: Ephemeral keys prevent historical deanonymization
+- **No Common Pitfalls**: Avoids exchange tracing and address reuse issues
+
+### Energy Meritocracy Security
+- **Fair Economics**: No first-mover advantages corrupt the system
+- **Perpetual Mining**: Tail emission prevents mining centralization
+- **CPU Accessibility**: Anyone can participate in network security
+- **Global Distribution**: Mining power spread across world population
 
 ## Market Position
 
-### Differentiation
-- **Unique Value**: First blockchain where mining builds network infrastructure
-- **Environmental**: No wasteful computation; all energy serves utility
-- **Accessibility**: Runs on any device, like Bitcoin
-- **Fairness**: Pure merit-based, no mining farms advantages
+### Differentiation from Bitcoin
+- **Payments**: Large blocks enable practical transactions (unlike Bitcoin's congestion)
+- **Privacy**: True anonymity vs Bitcoin's pseudonymous traceability
+- **Fairness**: Equal opportunity mining vs Bitcoin's early advantage
+- **Energy**: Meritocracy vs Bitcoin's mining centralization
+
+### Differentiation from Monero
+- **Enhanced Privacy**: ElGamal layer beyond Monero's cryptography
+- **Better Economics**: Fair perpetual emission vs Monero's complex tail
+- **CPU Mining**: Same ASIC resistance but with superior privacy
+- **Scalability**: Larger blocks for transaction volume
 
 ### Target Users
-- Privacy advocates seeking censorship-resistant communication
-- Developers needing decentralized networking
-- Anyone wanting to monetize idle compute for network good
+- **Privacy Advocates**: Seeking censorship-resistant, anonymous transactions
+- **Developers**: Building privacy-preserving decentralized applications
+- **Individuals**: Protecting financial privacy from surveillance
+- **Businesses**: Low-fee, instant cross-border payments
+- **Miners**: Fair CPU mining with meaningful rewards
 
 ## Conclusion
 
-Netcoin realizes Lowery's vision: a network secured by cumulative energy where participation strengthens collective defense. By making PoW useful through routing puzzles, it creates a sustainable decentralized internet layer—fair, secure, and powered by physics.
+Netcoin transcends both Bitcoin and Monero by combining Bitcoin's security foundation with privacy exceeding Monero's capabilities, all while ensuring true energy meritocracy. The RandomX CPU mining prevents centralization, ElGamal-enhanced cryptography provides military-grade privacy, and fair economics eliminate first-mover advantages.
 
-NTC isn't just currency; it's proof of contribution to a global public good. This rethinks digital infrastructure as an energy meritocracy.
+NTC represents the next evolution of cryptocurrency: a digital currency that is simultaneously more private than Monero, more usable than Bitcoin, and fairer than both. By aligning with Jason Lowery's Softwar thesis, Netcoin creates a system where energy expenditure directly translates to value creation, establishing a new paradigm for digital money.
 
-**Next Step**: Begin PoN implementation with Mycelium integration.
+**The future of money is private, fair, and energy-backed. Netcoin makes this future a reality.**
 
-The future of the internet is decentralized, and Netcoin can be its foundation.
+---
+
+## 📖 Additional Resources
+
+- **[Technical Specifications](https://netcoin-ntc.github.io/netcoin-internal/specs/)**: Complete protocol details
+- **[Developer Documentation](https://netcoin-ntc.github.io/netcoin-core/)**: API references and guides
+- **[Community](https://community.netcoin.org)**: Forums and developer discussions
+- **[Research](https://research.netcoin.org)**: Academic papers and cryptography analysis
