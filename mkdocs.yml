@@ -9,6 +9,7 @@ nav:
   - Overview: OVERVIEW.md
   - Features: FEATURES.md
   - CLI Reference: CLI.md
+  - DevNet Guide: DEVNET_GUIDE.md
   - Architecture: ARCHITECTURE.md
 
 theme:
