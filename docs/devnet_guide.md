@@ -733,15 +733,112 @@ Privacy Statistics:
 
 ---
 
+## 🧪 Automated Testing & Development
+
+### Quick Test Script
+
+Netcoin provides an automated testing script that runs through all DevNet functionalities:
+
+```bash
+# Run complete DevNet integration tests
+./test-devnet.sh
+
+# Run with verbose output
+./test-devnet.sh --verbose
+
+# Keep test data after completion
+./test-devnet.sh --keep-data
+
+# Get help
+./test-devnet.sh --help
+```
+
+The script automatically:
+- ✅ Builds all required components
+- ✅ Initializes DevNet environment
+- ✅ Creates test wallets
+- ✅ Mines blocks to earn NTC
+- ✅ Tests balance checking
+- ✅ Sends privacy transactions between wallets
+- ✅ Tests @alias system
+- ✅ Verifies network status
+- ✅ Validates privacy features
+
+### Makefile Commands
+
+Use the provided Makefile for convenient development:
+
+```bash
+# Show all available commands
+make help
+
+# Build all components
+make build
+
+# Build for production
+make build-release
+
+# Run unit tests
+make test
+
+# Run full DevNet integration tests
+make test-devnet
+
+# Initialize DevNet
+make devnet-init
+
+# Check DevNet status
+make devnet-status
+
+# Clean build artifacts
+make clean
+
+# Clean everything including test data
+make clean-all
+```
+
+### Development Workflow
+
+```bash
+# 1. Setup development environment
+make build
+
+# 2. Initialize DevNet
+make devnet-init
+
+# 3. Run full integration tests
+make test-devnet
+
+# 4. Quick manual testing
+make create-wallet    # Create a wallet
+make mine-test        # Mine to @test-wallet
+make check-balance    # Check balance
+
+# 5. View documentation
+make serve-docs
+```
+
+### CI/CD Integration
+
+The repository includes GitHub Actions for automated testing:
+
+- **Triggers**: Push to main/develop, pull requests
+- **Manual Runs**: Via GitHub UI with verbose/keep-data options
+- **Artifact Upload**: Test data preserved on failures
+- **Caching**: Rust/Python dependencies cached for speed
+
+---
+
 ## 🎯 Next Steps
 
 Now that you have a working DevNet:
 
-1. **Explore Privacy Features**: Try different transaction types
-2. **Test @Alias System**: Register multiple aliases, send between them
-3. **Multi-Node Testing**: Deploy more nodes and test P2P communication
-4. **Performance Testing**: Send many transactions, test limits
-5. **Integration Testing**: Connect external applications
+1. **Run Automated Tests**: Use `./test-devnet.sh` to verify everything works
+2. **Explore Privacy Features**: Try different transaction types and amounts
+3. **Test @Alias System**: Register multiple aliases, send between them
+4. **Multi-Node Testing**: Deploy more nodes and test P2P communication
+5. **Performance Testing**: Send many transactions, test limits
+6. **Integration Testing**: Connect external applications
 
 ## 📚 Additional Resources
 
@@ -749,6 +846,8 @@ Now that you have a working DevNet:
 - [CLI Reference](../CLI.md)
 - [Privacy Features](../FEATURES.md)
 - [Roadmap](../ROADMAP.md)
+- [Makefile](../Makefile) - Development commands
+- [test-devnet.sh](../test-devnet.sh) - Automated testing script
 
 ---
 
