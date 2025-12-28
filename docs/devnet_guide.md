@@ -441,7 +441,7 @@ Listing aliases for wallet @86867159e9a62b8eb9d333119c097d6677209f73486f576eddb3
 💸 Sending 0.5 NTC from @86867159e9a62b8eb9d333119c097d6677209f73486f576eddb3e620b153bb6d to @recipient...
 📝 Memo: Lunch payment
 🔄 Processing transaction...
-   📊 Amount: 0.5 NTC (500000000 satoshis)
+   📊 Amount: 0.5 NTC (500000000 netpennies)
    👤 From: @86867159e9a62b8eb9d333119c097d6677209f73486f576eddb3e620b153bb6d
    🎯 To: @recipient
    🔗 Transaction ID: tx_1b1f693e5258142cf981529e78281e32
