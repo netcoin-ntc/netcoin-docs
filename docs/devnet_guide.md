@@ -32,15 +32,23 @@ This comprehensive guide walks you through deploying and using Netcoin's DevNet 
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/netcoin-ntc.git
-cd netcoin-ntc/netcoin-core
+git clone https://github.com/netcoin-ntc/netcoin-ntc.git
+cd netcoin-ntc
 
 # Install Rust (if not already installed)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.cargo/env
 
-# Build all binaries
+# Build netcoin-core (node + wallet)
+cd netcoin-core
 cargo build --release
+
+# Build netcoin-miner (mining software)
+cd ../netcoin-miner
+cargo build --release
+
+# Return to netcoin-core for usage
+cd ../netcoin-core
 ```
 
 ## DevNet Architecture
@@ -221,82 +229,96 @@ Every Netcoin transaction shows these features in action:
 ## Step 3.5: Mining and Earning NTC
 
 ### Start DevNet Mining
+Netcoin uses a dedicated mining client (`netcoin-miner`) for better performance and security. Mining rewards go directly to your wallet address.
+
 ```bash
-# Start mining in the background (press Ctrl+C to stop)
-./target/release/netcoin-devnet mine
+# Terminal 1: Start DevNet node
+./target/release/netcoin-devnet init
+
+# Terminal 2: Start mining to your wallet
+../netcoin-miner/target/release/netcoin-miner mine --wallet @your-wallet-address
 ```
 
 **Expected Output:**
 ```
-⛏️  Starting DevNet mining...
-💡 Use Ctrl+C to stop mining
+⛏️  Netcoin Miner v0.1.0
+   🎯 Wallet: @your-wallet-address
+   🌐 Node: http://127.0.0.1:8332
+   🧵 Auto-detected 8 CPU threads
+   🧵 Using 8 threads
+   🎯 Mining mode: Solo mining
+   💰 Rewards will go to: @your-wallet-address
 
-🚀 Starting DevNet mining...
-⛏️  Starting DevNet mining...
-   💡 DevNet Parameters:
-      • Difficulty: Very low (1) for fast mining
-      • Block reward: 100 NTC
-      • Mining style: Simplified Proof-of-Work
+🚀 Starting Netcoin mining...
+   Press Ctrl+C to stop mining
 
-✅ DevNet mining started!
-💡 Mining will continue in background
-💡 Check status with: netcoin-devnet status
-💡 Stop mining with: netcoin-devnet mine --stop
-🔄 Press Ctrl+C to stop mining...
-✅ Block 1 mined in 0.00s! 🎉
-   💰 Reward: 100 NTC added to genesis wallet
-✅ Block 2 mined in 0.00s! 🎉
-   💰 Reward: 100 NTC added to genesis wallet
+✅ Block 1 mined in 0.02s! 🎉 (Hashrate: 50,000 H/s)
+   💰 Mining reward sent to: @your-wallet-address
+✅ Block 2 mined in 0.01s! 🎉 (Hashrate: 100,000 H/s)
+   💰 Mining reward sent to: @your-wallet-address
 ...
 ```
 
 ### Mining Parameters
-- **Algorithm**: Proof-of-Work (RandomX-compatible)
-- **Difficulty**: 1 (very easy for testing)
+- **Algorithm**: CPU mining (RandomX-ready)
+- **Difficulty**: Very low for DevNet testing
 - **Block Reward**: 100 NTC per block
-- **Block Time**: ~30 seconds (DevNet accelerated)
-- **Miner Address**: Genesis wallet receives rewards
+- **Block Time**: ~1-5 seconds (DevNet accelerated)
+- **Miner Address**: Your specified wallet receives rewards
 
-### Check Mining Status
+### Check Your Mining Rewards
 ```bash
-# Check current DevNet status
-./target/release/netcoin-devnet status
+# Check your wallet balance to see mining rewards
+./target/release/netcoin-cli wallet balance @your-wallet-address
 ```
 
 **Expected Output:**
 ```
-🌐 Netcoin DevNet Configuration
-   📍 Network ID: devnet
-   ⏱️  Block Time: 30 seconds
-   ⚡ Mining Difficulty: 1
-   💰 Genesis Allocation: 1000 NTC
-   🚀 Fast Sync: Enabled
-   🐛 Debug Mode: Enabled
-   📁 Data Directory: ./devnet-data
+💰 Checking balance for @your-wallet-address...
+🔍 Checking for DevNet config at: "devnet-config.json"
+📁 Current directory: "/path/to/netcoin-core"
+📄 Config exists: true
+🌐 DevNet detected - querying actual blockchain...
+✅ DevNet Balance: 200.00 NTC (from 2 mined blocks)
+📊 Satoshis: 200000000000
+🏆 Mining Rewards: 2 blocks × 100 NTC
+```
 
-✅ Genesis block: Present
-✅ Data directory: Present
-📦 Blocks mined: 5 (real blockchain active)
+### Mining Options
+```bash
+# Mine with specific thread count
+../netcoin-miner/target/release/netcoin-miner mine --wallet @your-wallet --threads 4
+
+# Mine to different wallet
+../netcoin-miner/target/release/netcoin-miner mine --wallet @another-wallet
+
+# Pool mining (future feature)
+../netcoin-miner/target/release/netcoin-miner mine --pool pool.example.com:3333 --wallet @your-wallet
 ```
 
 ### Understanding Mining Rewards
-- **Genesis Wallet**: `@f03873113d1912b1099ea9a65d38fb7b25c64aa1477d18b76fd9e4a136dd0198`
-- **Reward Amount**: 100 NTC per block
-- **Accumulation**: Rewards accumulate in the genesis wallet
-- **DevNet Purpose**: Provides NTC for testing privacy features and @alias registration
+- **Your Wallet**: Mining rewards go directly to your specified address
+- **Real NTC**: Creates actual spendable NTC on the blockchain
+- **DevNet Testing**: Perfect for testing privacy features with real funds
+- **No Genesis Dependency**: Unlike old system, you control your mining rewards
+
+### Mining Performance
+- **CPU Mining**: Uses all available CPU cores by default
+- **Hashrate**: Scales with CPU performance and core count
+- **Efficiency**: Optimized for fast DevNet block times
+- **Low Resource**: Minimal memory and disk usage
 
 ### Stop Mining
 ```bash
-# Mining runs in background, stop it with:
-# Ctrl+C (if running interactively)
-# Or kill the process if running detached
+# Press Ctrl+C in the mining terminal
+# Mining stops gracefully and shows final statistics
 ```
 
 ### Mining Benefits for Testing
 - **Real Blockchain**: Creates actual blocks and transactions
 - **Economic Testing**: Validates mining rewards and distribution
 - **Balance Testing**: Provides NTC for wallet operations
-- **Consensus Testing**: Prepares for multi-node validation
+- **Privacy Testing**: Enables full end-to-end privacy feature testing
 - **Performance Benchmarking**: Tests mining speed and efficiency
 
 ## Step 4: @Alias System
