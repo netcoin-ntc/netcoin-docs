@@ -126,7 +126,8 @@ cd netcoin-ntc/netcoin-core
 devnet-config.json      # DevNet configuration
 ./devnet-data/          # DevNet data directory
   ├── genesis.dat       # Genesis block
-  └── ...               # Future blockchain data
+  ├── blockchain.dat    # Real blockchain state (after mining)
+  └── ...               # Additional blockchain data
 ```
 
 ## Step 2: Wallet Creation
@@ -216,6 +217,87 @@ Every Netcoin transaction shows these features in action:
    ✅ ElGamal Encryption (memo protection)
    ✅ Stealth Address (recipient privacy)
 ```
+
+## Step 3.5: Mining and Earning NTC
+
+### Start DevNet Mining
+```bash
+# Start mining in the background (press Ctrl+C to stop)
+./target/release/netcoin-devnet mine
+```
+
+**Expected Output:**
+```
+⛏️  Starting DevNet mining...
+💡 Use Ctrl+C to stop mining
+
+🚀 Starting DevNet mining...
+⛏️  Starting DevNet mining...
+   💡 DevNet Parameters:
+      • Difficulty: Very low (1) for fast mining
+      • Block reward: 100 NTC
+      • Mining style: Simplified Proof-of-Work
+
+✅ DevNet mining started!
+💡 Mining will continue in background
+💡 Check status with: netcoin-devnet status
+💡 Stop mining with: netcoin-devnet mine --stop
+🔄 Press Ctrl+C to stop mining...
+✅ Block 1 mined in 0.00s! 🎉
+   💰 Reward: 100 NTC added to genesis wallet
+✅ Block 2 mined in 0.00s! 🎉
+   💰 Reward: 100 NTC added to genesis wallet
+...
+```
+
+### Mining Parameters
+- **Algorithm**: Proof-of-Work (RandomX-compatible)
+- **Difficulty**: 1 (very easy for testing)
+- **Block Reward**: 100 NTC per block
+- **Block Time**: ~30 seconds (DevNet accelerated)
+- **Miner Address**: Genesis wallet receives rewards
+
+### Check Mining Status
+```bash
+# Check current DevNet status
+./target/release/netcoin-devnet status
+```
+
+**Expected Output:**
+```
+🌐 Netcoin DevNet Configuration
+   📍 Network ID: devnet
+   ⏱️  Block Time: 30 seconds
+   ⚡ Mining Difficulty: 1
+   💰 Genesis Allocation: 1000 NTC
+   🚀 Fast Sync: Enabled
+   🐛 Debug Mode: Enabled
+   📁 Data Directory: ./devnet-data
+
+✅ Genesis block: Present
+✅ Data directory: Present
+📦 Blocks mined: 5 (real blockchain active)
+```
+
+### Understanding Mining Rewards
+- **Genesis Wallet**: `@f03873113d1912b1099ea9a65d38fb7b25c64aa1477d18b76fd9e4a136dd0198`
+- **Reward Amount**: 100 NTC per block
+- **Accumulation**: Rewards accumulate in the genesis wallet
+- **DevNet Purpose**: Provides NTC for testing privacy features and @alias registration
+
+### Stop Mining
+```bash
+# Mining runs in background, stop it with:
+# Ctrl+C (if running interactively)
+# Or kill the process if running detached
+```
+
+### Mining Benefits for Testing
+- **Real Blockchain**: Creates actual blocks and transactions
+- **Economic Testing**: Validates mining rewards and distribution
+- **Balance Testing**: Provides NTC for wallet operations
+- **Consensus Testing**: Prepares for multi-node validation
+- **Performance Benchmarking**: Tests mining speed and efficiency
 
 ## Step 4: @Alias System
 
@@ -513,6 +595,119 @@ Privacy Statistics:
 2. **QANet**: Formal QA and performance testing
 3. **TestNet**: Community testing and feedback
 4. **MainNet**: Production network with real economic value
+
+---
+
+## 🧪 Complete A to Z Testing Workflow
+
+### Full DevNet Testing Sequence
+
+Follow this complete workflow to test all Netcoin features end-to-end:
+
+#### **Step 1: Initialize DevNet**
+```bash
+cd netcoin-ntc/netcoin-core
+./target/release/netcoin-devnet init
+```
+
+#### **Step 2: Start Mining (Background)**
+```bash
+# Terminal 1: Start mining to generate NTC
+./target/release/netcoin-devnet mine &
+```
+
+#### **Step 3: Create Wallets**
+```bash
+# Terminal 2: Create test wallets
+./target/release/netcoin-cli wallet create  # Wallet A
+./target/release/netcoin-cli wallet create  # Wallet B
+```
+
+#### **Step 4: Mine Some Blocks**
+```bash
+# Let mining run for 2-3 minutes to generate NTC
+# Check: ./target/release/netcoin-devnet status
+```
+
+#### **Step 5: Register Aliases**
+```bash
+# Register human-readable aliases
+./target/release/netcoin-cli alias register alice --wallet @<wallet-a-address>
+./target/release/netcoin-cli alias register bob --wallet @<wallet-b-address>
+```
+
+#### **Step 6: Send Privacy Transactions**
+```bash
+# Send NTC between aliases with full privacy
+./target/release/netcoin-cli tx send @alice @bob 0.5 --memo "Test transaction"
+./target/release/netcoin-cli tx send @bob @alice 0.25 --memo "Return payment"
+```
+
+#### **Step 7: Verify Privacy Features**
+```bash
+# Check that all privacy features are applied
+./target/release/netcoin-cli info privacy
+./target/release/netcoin-cli info network-status
+```
+
+#### **Step 8: Multi-Node Testing (Optional)**
+```bash
+# Deploy additional nodes for consensus testing
+./target/release/netcoin-devnet deploy 2
+```
+
+### Expected Full Workflow Output
+
+```
+🏗️ Initializing Netcoin DevNet...
+✅ DevNet node deployed successfully!
+
+⛏️ Starting DevNet mining...
+✅ Block 1 mined in 0.00s! 🎉 💰 Reward: 100 NTC added to genesis wallet
+✅ Block 2 mined in 0.00s! 🎉 💰 Reward: 100 NTC added to genesis wallet
+
+🔐 Creating new Netcoin wallet...
+✅ Wallet created successfully!
+📍 Address: @alice_wallet_address
+
+🔐 Creating new Netcoin wallet...
+✅ Wallet created successfully!
+📍 Address: @bob_wallet_address
+
+Registering alias @alice...
+✅ Alias @alice registered successfully!
+💰 Registration fee: 0.1 NTC
+
+Registering alias @bob...
+✅ Alias @bob registered successfully!
+💰 Registration fee: 0.1 NTC
+
+💸 Sending 0.5 NTC from @alice to @bob...
+🔐 Privacy Features Applied:
+   ✅ MLSAG Ring Signature (16 decoy outputs)
+   ✅ Bulletproofs Range Proof (amount validity)
+   ✅ Pedersen Commitment (amount hiding)
+   ✅ ElGamal Encryption (memo protection)
+   ✅ Stealth Address (recipient privacy)
+✅ Transaction sent successfully!
+
+Privacy Statistics:
+  Ring Signature Size: 16 members
+  Confidential Transactions: Enabled
+  Stealth Addresses: Enabled
+  ElGamal Encryption: IND-CCA2
+  @Alias System: Enabled
+```
+
+### Testing Checklist
+
+- [ ] ✅ DevNet initializes successfully
+- [ ] ✅ Mining creates real blocks with rewards
+- [ ] ✅ Wallets create with proper seed phrases
+- [ ] ✅ @Alias registration works with balance checks
+- [ ] ✅ Privacy transactions send with all 5 features
+- [ ] ✅ Network status shows proper statistics
+- [ ] ✅ Multi-node deployment works (optional)
 
 ---
 
