@@ -740,17 +740,20 @@ Privacy Statistics:
 Netcoin provides an automated testing script that runs through all DevNet functionalities:
 
 ```bash
+# Navigate to development tools
+cd ../netcoin-internal
+
 # Run complete DevNet integration tests
-./test-devnet.sh
+./scripts/test-devnet.sh
 
 # Run with verbose output
-./test-devnet.sh --verbose
+./scripts/test-devnet.sh --verbose
 
 # Keep test data after completion
-./test-devnet.sh --keep-data
+./scripts/test-devnet.sh --keep-data
 
 # Get help
-./test-devnet.sh --help
+./scripts/test-devnet.sh --help
 ```
 
 The script automatically:
