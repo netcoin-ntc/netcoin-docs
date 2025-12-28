@@ -58,7 +58,7 @@ cd ../netcoin-core
 |-----------|-------------|---------------|---------|
 | Block Time | 30 seconds | 10 minutes | Rapid testing |
 | Mining Difficulty | 1 | Variable | Easy mining |
-| Genesis Allocation | 1000 NTC | 0 NTC | Testing funds |
+| Genesis Allocation | None | 0 NTC | No pre-mined funds |
 | Network ID | "devnet" | "mainnet" | Network isolation |
 | Fast Sync | Enabled | Disabled | Quick startup |
 
@@ -95,7 +95,7 @@ cd netcoin-ntc/netcoin-core
    📍 Network ID: devnet
    ⏱️  Block Time: 30 seconds
    ⚡ Mining Difficulty: 1
-   💰 Genesis Allocation: 1000 NTC
+   💰 Genesis Allocation: None
    🚀 Fast Sync: Enabled
    🐛 Debug Mode: Enabled
    📁 Data Directory: ./devnet-data
@@ -119,7 +119,7 @@ cd netcoin-ntc/netcoin-core
    📍 Network ID: devnet
    ⏱️  Block Time: 30 seconds
    ⚡ Mining Difficulty: 1
-   💰 Genesis Allocation: 1000 NTC
+   💰 Genesis Allocation: None
    🚀 Fast Sync: Enabled
    🐛 Debug Mode: Enabled
    📁 Data Directory: ./devnet-data
@@ -605,7 +605,7 @@ Privacy Statistics:
 |---------|--------|---------|
 | **Block Time** | 30 seconds | 10 minutes |
 | **Mining Difficulty** | 1 (very easy) | Variable (~10^12) |
-| **Genesis Allocation** | 1000 NTC | 0 NTC |
+| **Genesis Allocation** | None | 0 NTC |
 | **Network ID** | "devnet" | "mainnet" |
 | **Fast Sync** | Enabled | Disabled |
 | **Debug Logging** | Enabled | Disabled |
