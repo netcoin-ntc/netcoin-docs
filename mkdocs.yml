@@ -23,6 +23,8 @@ theme:
     - toc.integrate
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.code.select
   favicon: assets/images/favicon.ico
   logo: assets/images/logo.svg
 

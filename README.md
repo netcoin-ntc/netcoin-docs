@@ -13,11 +13,11 @@ The documentation is automatically deployed to GitHub Pages on every push to the
 ```
 docs/
 ├── index.md           # Landing page
-├── OVERVIEW.md        # Project overview and philosophy
-├── FEATURES.md        # Feature descriptions
-├── CLI.md            # Command-line interface reference
-├── ARCHITECTURE.md   # Technical architecture
-└── ROADMAP.md        # Development roadmap
+├── overview.md        # Project overview and philosophy
+├── features.md        # Feature descriptions
+├── cli.md            # Command-line interface reference
+├── architecture.md   # Technical architecture
+└── roadmap.md        # Development roadmap
 
 mkdocs.yml           # MkDocs configuration
 .github/
