@@ -1,16 +1,10 @@
-site_name: Netcoin
+site_name: Netcoin Documentation
+site_description: Privacy-focused cryptocurrency documentation
+site_author: Netcoin Team
 site_url: https://netcoin-ntc.github.io/netcoin-docs
-repo_url: https://github.com/netcoin-ntc/netcoin-core
-repo_name: netcoin-ntc/netcoin-core
-edit_uri: edit/main/docs/
 
-nav:
-  - Home: index.md
-  - Overview: overview.md
-  - Features: features.md
-  - CLI Reference: cli.md
-  - DevNet Guide: devnet_guide.md
-  - Architecture: architecture.md
+repo_name: netcoin-ntc/netcoin-ntc
+repo_url: https://github.com/netcoin-ntc/netcoin-ntc
 
 theme:
   name: material
@@ -19,31 +13,39 @@ theme:
     accent: blue
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - toc.integrate
+    - navigation.expand
+    - toc.follow
     - search.suggest
     - search.highlight
-    - content.code.copy
-    - content.code.select
-  favicon: assets/images/favicon.ico
-  logo: assets/images/logo.svg
 
 plugins:
   - search
   - git-revision-date-localized:
       enable_creation_date: true
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/netcoin-ntc/netcoin-core
+  - minify:
+      minify_html: true
 
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.details
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - meta
+  - toc:
+      permalink: true
+  - attr_list
+  - admonition
+
+nav:
+  - Home: index.md
+  - DevNet Guide: devnet_guide.md
+  - Architecture: architecture.md
+  - API Reference: api_reference.md
+  - Contributing: contributing.md
