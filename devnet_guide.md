@@ -104,6 +104,8 @@ Testing Results: 8/8 tests passed
 🎉 All DevNet tests passed successfully!
 ```
 
+**Note**: Netcoin uses "netpennies" as its smallest unit (1 NTC = 100,000,000 netpennies), distinct from Bitcoin's satoshis.
+
 ---
 
 ## ⛏️ Mining System
@@ -222,7 +224,7 @@ netcoin-cli tx send @sender @recipient 1.5 --memo "Payment for services"
 # Output:
 # 💸 Sending 1.5 NTC...
 # 🔄 Processing transaction...
-# 📊 Amount: 1.5 NTC (150000000 satoshis)
+# 📊 Amount: 1.5 NTC (150000000 netpennies)
 # 🔐 Privacy Features Applied:
 #    ✅ MLSAG Ring Signature (16 decoy outputs)
 #    ✅ Bulletproofs Range Proof (amount validity)
