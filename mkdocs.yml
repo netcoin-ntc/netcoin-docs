@@ -6,11 +6,11 @@ edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
-  - Overview: OVERVIEW.md
-  - Features: FEATURES.md
-  - CLI Reference: CLI.md
-  - DevNet Guide: DEVNET_GUIDE.md
-  - Architecture: ARCHITECTURE.md
+  - Overview: overview.md
+  - Features: features.md
+  - CLI Reference: cli.md
+  - DevNet Guide: devnet_guide.md
+  - Architecture: architecture.md
 
 theme:
   name: material
