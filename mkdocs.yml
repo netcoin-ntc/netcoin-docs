@@ -45,7 +45,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - DevNet Guide: devnet_guide.md
+  - Testing Guide: testing_guide.md
   - Architecture: architecture.md
   - API Reference: api_reference.md
   - Contributing: contributing.md

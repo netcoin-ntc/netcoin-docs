@@ -1,10 +1,283 @@
-# Netcoin DevNet Complete Guide: From Zero to Privacy Transactions
+# Netcoin Complete Testing Guide: DevNet, QANet & TestNet
 
-This comprehensive guide walks you through deploying and using Netcoin's DevNet - a development environment for testing all Netcoin features with accelerated parameters for rapid iteration.
+This comprehensive guide walks you through deploying and using Netcoin's three testing networks - DevNet, QANet, and TestNet - for complete end-to-end testing of all Netcoin features with different parameters for various testing scenarios.
 
-## Table of Contents
+## Netcoin Testing Networks Overview
 
-- [Prerequisites](#prerequisites)
+Netcoin provides three distinct testing networks, each optimized for different testing scenarios. All networks are **production-ready** and include the complete Netcoin feature set with advanced privacy cryptography.
+
+### Network Comparison Table
+
+| Feature | **DevNet** | **QANet** | **TestNet** | **MainNet** |
+|---------|------------|-----------|-------------|-------------|
+| **Purpose** | Development & Feature Testing | Formal QA & Benchmarking | Community Testing | Production |
+| **Block Time** | 30 seconds | 10 minutes | 2 minutes | 10 minutes |
+| **Difficulty** | 1 (very easy) | 10,000 (medium) | 50,000 (challenging) | Variable |
+| **Genesis Allocation** | 0 NTC | 1,000 NTC | 10,000 NTC | 0 NTC |
+| **Mining Reward** | 100 NTC/block | 100 NTC/block | 100 NTC/block | Variable |
+| **Network ID** | `"devnet"` | `"qanet"` | `"testnet"` | `"mainnet"` |
+| **Fast Sync** | ✅ Enabled | ✅ Enabled | ✅ Enabled | ❌ Disabled |
+| **Debug Mode** | ✅ Enabled | ❌ Disabled | ❌ Disabled | ❌ Disabled |
+| **Public Access** | Internal only | Internal only | Public | Public |
+| **Best For** | Rapid iteration | Performance testing | Community validation | Real transactions |
+
+### DevNet: Development Network
+**Perfect for rapid development and feature testing**
+
+```bash
+# Test all DevNet features automatically
+cd netcoin-internal/scripts
+./demo-all-features.sh devnet
+```
+
+**Characteristics:**
+- ⚡ **30-second blocks** - Fast iteration and testing
+- 🎯 **Difficulty 1** - Instant mining for development
+- 🛠️ **Debug enabled** - Full logging and error details
+- 🔄 **Resettable** - Clean state for testing scenarios
+- 💰 **No premine** - Earn NTC through mining
+
+### QANet: Quality Assurance Network
+**Optimized for formal testing and benchmarking**
+
+```bash
+# Test all QANet features automatically
+cd netcoin-internal/scripts
+./demo-all-features.sh qanet
+```
+
+**Characteristics:**
+- 📊 **10-minute blocks** - Bitcoin-like parameters
+- 🎯 **Difficulty 10k** - Realistic mining challenge
+- 📈 **Performance monitoring** - TPS and latency metrics
+- 🔬 **Regression testing** - Automated QA pipelines
+- 🎭 **Production simulation** - Real-world testing conditions
+
+### TestNet: Community Testing Network
+**Designed for community validation and feedback**
+
+```bash
+# Test all TestNet features automatically
+cd netcoin-internal/scripts
+./demo-all-features.sh testnet
+```
+
+**Characteristics:**
+- 🌐 **2-minute blocks** - Balanced for community testing
+- 🎯 **Difficulty 50k** - Challenging but achievable
+- 👥 **Community faucet** - Free NTC distribution
+- 📊 **Global nodes** - Worldwide testing infrastructure
+- 🐛 **Bug bounty ready** - Issue tracking and reporting
+
+### Network Isolation Verification
+
+All networks are **completely isolated** - test on one network doesn't affect others:
+
+```bash
+# Test network isolation
+cd netcoin-internal/scripts
+./test-all-networks.sh
+```
+
+**What gets tested:**
+- ✅ DevNet wallets don't exist on TestNet
+- ✅ QANet blocks don't appear on DevNet
+- ✅ TestNet transactions don't affect QANet
+- ✅ Complete blockchain separation
+- ✅ Independent genesis blocks
+- ✅ Isolated mining rewards
+
+### Automated Feature Testing
+
+Netcoin provides comprehensive automated testing for all networks:
+
+#### **Complete Feature Demo (Recommended)**
+```bash
+# Test ALL features on any network
+./demo-all-features.sh [devnet|qanet|testnet]
+
+# Example outputs:
+# DevNet: 60+ blocks mined in 30 seconds
+# QANet: Realistic Bitcoin-like mining
+# TestNet: Community-scale testing
+```
+
+#### **Network Isolation Testing**
+```bash
+# Verify all networks are properly separated
+./test-all-networks.sh
+```
+
+#### **Manual Testing Options**
+```bash
+# Build and initialize any network
+cd netcoin-core
+./target/release/netcoin-devnet init  # Uses devnet by default
+
+# Switch to different network
+cp qanet-config.json devnet-config.json
+./target/release/netcoin-devnet init
+
+# Mine on any network
+cd ../netcoin-miner
+./target/release/netcoin-miner mine --wallet @your-address
+
+# Use CLI on any network
+cd ../netcoin-core
+./target/release/netcoin-cli --network qanet wallet balance @address
+```
+
+### Features Available on All Networks
+
+All three testing networks include the **complete Netcoin feature set**:
+
+#### ✅ Core Cryptocurrency Features
+- **Proof-of-Work Mining** - CPU-focused with adjustable difficulty
+- **UTXO Blockchain** - Unspent transaction output model
+- **Wallet Management** - 24-word BIP39 seed phrases
+- **Transaction Processing** - Full validation and confirmation
+
+#### ✅ Advanced Privacy Features
+- **MLSAG Ring Signatures** - 16-member anonymity sets
+- **Bulletproofs** - Zero-knowledge range proofs
+- **Confidential Transactions** - Amount hiding with Pedersen commitments
+- **Stealth Addresses** - One-time recipient addresses
+- **ElGamal Encryption** - IND-CCA2 secure memo encryption
+
+#### ✅ User Experience Features
+- **@Alias System** - Human-readable @usernames (0.1 NTC fee)
+- **Command-Line Interface** - Full wallet and transaction management
+- **RPC Server** - Mining coordination and block submission
+- **Network Statistics** - Real-time blockchain metrics
+
+#### ✅ Development Features
+- **Multi-Node Support** - Consensus testing and validation
+- **Automated Testing** - Comprehensive feature verification
+- **Debug Logging** - Detailed operation visibility
+- **Clean State Management** - Reset and cleanup capabilities
+
+### Getting Started with Testing
+
+#### **Quick Start (DevNet Recommended)**
+```bash
+# 1. Build Netcoin
+cd netcoin-ntc
+cd netcoin-core && cargo build --release
+cd ../netcoin-miner && cargo build --release
+
+# 2. Run complete feature demonstration
+cd ../netcoin-internal/scripts
+./demo-all-features.sh devnet
+```
+
+#### **Expected DevNet Results:**
+```
+✅ DevNet initialized
+✅ RPC server running
+✅ 2 wallets created with 24-word seeds
+✅ Mining: 60+ blocks in 30 seconds
+✅ Balance persistence working
+✅ Confidential transactions sent
+✅ @Alias registration successful
+✅ Stealth addresses generated
+✅ All privacy features verified
+```
+
+#### **Testing Different Scenarios:**
+
+**For Development Speed:**
+```bash
+./demo-all-features.sh devnet   # 30s blocks, instant mining
+```
+
+**For Realistic Testing:**
+```bash
+./demo-all-features.sh qanet    # 10min blocks, Bitcoin-like
+```
+
+**For Community Simulation:**
+```bash
+./demo-all-features.sh testnet  # 2min blocks, challenging mining
+```
+
+### Advanced Testing Scenarios
+
+#### **Performance Benchmarking**
+```bash
+# Test mining performance across networks
+./demo-all-features.sh devnet   # Measure hashrates and block times
+./demo-all-features.sh qanet    # Test realistic mining conditions
+```
+
+#### **Privacy Feature Validation**
+```bash
+# All networks include identical privacy features
+./demo-all-features.sh devnet   # Fast privacy testing
+./demo-all-features.sh testnet  # Community-scale privacy
+```
+
+#### **Network Consensus Testing**
+```bash
+# Test multi-node consensus (all networks support this)
+./test-all-networks.sh          # Verify network isolation
+```
+
+### Troubleshooting Network Testing
+
+#### **Common Issues:**
+
+**"Command not found"**
+```bash
+# Ensure binaries are built
+cd netcoin-core && cargo build --release
+cd ../netcoin-miner && cargo build --release
+```
+
+**"Network not initialized"**
+```bash
+# Initialize the specific network
+cd netcoin-core
+cp [network]-config.json devnet-config.json
+./target/release/netcoin-devnet init
+```
+
+**"Mining takes too long"**
+```bash
+# Use DevNet for fast mining
+./demo-all-features.sh devnet  # 30s blocks, difficulty 1
+```
+
+**"Balance shows zero"**
+```bash
+# Mining rewards need time to process
+# DevNet: Check after 30 seconds of mining
+# QANet/TestNet: May take several minutes
+```
+
+### Network Selection Guide
+
+| **When to Use** | **Recommended Network** | **Why** |
+|-----------------|-------------------------|---------|
+| **First-time testing** | DevNet | Fast results, easy mining |
+| **Realistic performance** | QANet | Bitcoin-like parameters |
+| **Community simulation** | TestNet | Global testing scale |
+| **Privacy feature testing** | Any | All networks identical |
+| **Mining algorithm testing** | DevNet | Fast iteration |
+| **UI/UX development** | DevNet | Quick feedback loops |
+| **Security testing** | QANet/TestNet | Production-like conditions |
+| **Performance benchmarking** | QANet | Realistic load testing |
+
+### Next Steps After Testing
+
+1. **Run Automated Tests** - Verify all features work
+2. **Explore Advanced Features** - Try different transaction types
+3. **Multi-Node Testing** - Deploy consensus networks
+4. **Performance Analysis** - Benchmark mining and transactions
+5. **Integration Testing** - Connect external applications
+
+---
+
+## Prerequisites
 - [DevNet Architecture](#devnet-architecture)
 - [Step 1: DevNet Deployment](#step-1-devnet-deployment)
 - [Step 2: Wallet Creation](#step-2-wallet-creation)
@@ -505,7 +778,7 @@ Listing aliases for wallet @86867159e9a62b8eb9d333119c097d6677209f73486f576eddb3
    📍 Network ID: devnet
    ⏱️  Block Time: 30 seconds
    ⚡ Mining Difficulty: 1
-   💰 Genesis Allocation: 1000 NTC
+   💰 Genesis Allocation: None
    🚀 Fast Sync: Enabled
    🐛 Debug Mode: Enabled
    📁 Data Directory: ./devnet-data
@@ -531,7 +804,6 @@ Listing aliases for wallet @86867159e9a62b8eb9d333119c097d6677209f73486f576eddb3
 
 🔗 P2P Network Features:
    • Message serialization with bincode
-   • TCP-based peer connections
    • Transaction broadcasting
    • Block announcement propagation
    • Alias registry synchronization
