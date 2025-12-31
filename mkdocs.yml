@@ -43,5 +43,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - CLI: cli.md
   - Testing Guide: testing_guide.md
   - Architecture: architecture.md
