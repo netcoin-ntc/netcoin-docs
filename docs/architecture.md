@@ -17,7 +17,7 @@ Netcoin is a privacy-focused cryptocurrency implementing pure proof-of-work cons
 │ ElGamal Privacy Layer                           │
 │ • IND-CCA2 encryption                           │
 │ • MLSAG ring signatures                         │
-│ • Confidential transactions                      │
+│ • Confidential transactions                     │
 ├─────────────────────────────────────────────────┤
 │ UTxO Blockchain Core                            │
 │ • Bitcoin-compatible transactions               │
